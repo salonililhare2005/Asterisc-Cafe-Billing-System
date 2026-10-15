@@ -1,94 +1,180 @@
-# Asterisc Cafe Billing System
+<div align="center">
 
-A simple, interactive console-based billing application built in C++ for managing cafe orders, calculating bills, and processing cash payments.
+# ☕ Asterisc Cafe Billing System
 
-## Overview
+**A friendly, interactive console application for taking cafe orders, generating bills, and handling cash payments — built in C++.**
 
-This project simulates a cafe ordering experience where the user:
+![Language](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![Interface](https://img.shields.io/badge/Interface-CLI-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
+![Level](https://img.shields.io/badge/Level-Beginner--Friendly-brightgreen?style=for-the-badge)
+![Purpose](https://img.shields.io/badge/Purpose-Educational-blueviolet?style=for-the-badge)
 
-- views the menu,
-- selects one or more items,
-- enters quantities,
-- generates a detailed bill,
-- pays the total amount,
-- receives change,
-- ends with a thank-you message.
+[Overview](#-overview) •
+[Features](#-features) •
+[Menu](#-the-menu) •
+[Quick Start](#-quick-start) •
+[How It Works](#%EF%B8%8F-how-it-works) •
+[Demo](#-example-session)
 
-The system is designed for a single cashier/customer session and runs directly from the terminal.
+</div>
 
-## Features
+---
 
-- Interactive cafe menu display
-- Item selection with quantity input
-- Automatic subtotal calculation per item
-- Grand total calculation
-- Cash payment processing
-- Change calculation
-- Professional console-style bill output
-- Simple, lightweight C++ implementation
+## 📖 Overview
 
-## Menu Items
+Welcome to **Asterisc Cafe**! 👋
 
-The application includes these menu items and prices:
+This project brings a cafe counter to your terminal. A cashier can browse the menu, add items to an order, and generate a clean, itemised bill — then accept cash and calculate the change, all in a single smooth session.
 
-| No. | Item | Price |
-| --- | --- | ---: |
-| 1 | Chocolate Shake | Rs. 119.00 |
-| 2 | Oreo Shake | Rs. 119.00 |
-| 3 | Choco Seduction | Rs. 139.00 |
-| 4 | Rose Shake | Rs. 119.00 |
-| 5 | Mango Shake | Rs. 119.00 |
-| 6 | Strawberry Shake | Rs. 119.00 |
-| 7 | Iced Tea | Rs. 89.00 |
-| 8 | Peach Iced Tea | Rs. 89.00 |
-| 9 | Virgin Long Island Iced Tea | Rs. 109.00 |
-| 10 | Blue Lagoon | Rs. 89.00 |
-| 11 | Mojito | Rs. 99.00 |
-| 12 | Kiss on the Beach | Rs. 109.00 |
-| 0 | Exit | — |
-
-## How It Works
-
-1. The program displays the full menu and welcomes the customer.
-2. The cashier selects an item number from the menu.
-3. The user enters the quantity for that item.
-4. The program stores the order and continues prompting until the user enters `0`.
-5. Once the customer exits the selection process, the bill is generated.
-6. The program asks for the cash amount.
-7. If the payment is less than the bill total, it prompts for the remaining amount.
-8. If payment is sufficient, it calculates and prints the return amount.
-9. The system displays a friendly closing message.
-
-## Project Structure
+The customer journey looks like this:
 
 ```text
-Cafe-Billing-System-main/
-├── main.cpp
-├── README.md
-└── compiled executable (generated after build)
+ 📋 View Menu ─▶ 🥤 Pick Items ─▶ 🔢 Enter Quantities ─▶ 🧾 Get Bill ─▶ 💵 Pay ─▶ 🪙 Receive Change ─▶ 🙏 Thank You!
 ```
 
-## Run the Program
+The system is designed for a **single cashier/customer session** and runs directly from the command line.
 
-### Compile
+---
+
+## ✨ Features
+
+| Feature | Description |
+|:--|:--|
+| 📋 **Interactive Menu** | Clearly numbered menu with item names and prices |
+| 🛒 **Multi-Item Orders** | Add as many items as you like, each with its own quantity |
+| ➗ **Automatic Subtotals** | Calculates the cost of every line item instantly |
+| 🧾 **Grand Total** | Sums the full order into a single payable amount |
+| 💵 **Cash Payments** | Accepts cash and prompts for the balance if payment falls short |
+| 🪙 **Change Calculation** | Works out the exact return amount for the customer |
+| 🖨️ **Professional Bill Output** | Neatly formatted, receipt-style bill in the console |
+| ⚡ **Lightweight** | Pure C++ with no external dependencies |
+
+---
+
+## 🍹 The Menu
+
+<table>
+<tr>
+<td valign="top">
+
+### 🥤 Shakes
+
+| No. | Item | Price |
+|:--:|:--|--:|
+| 1 | Chocolate Shake | ₹119.00 |
+| 2 | Oreo Shake | ₹119.00 |
+| 3 | Choco Seduction | ₹139.00 |
+| 4 | Rose Shake | ₹119.00 |
+| 5 | Mango Shake | ₹119.00 |
+| 6 | Strawberry Shake | ₹119.00 |
+
+</td>
+<td valign="top">
+
+### 🧊 Coolers & Mocktails
+
+| No. | Item | Price |
+|:--:|:--|--:|
+| 7 | Iced Tea | ₹89.00 |
+| 8 | Peach Iced Tea | ₹89.00 |
+| 9 | Virgin Long Island Iced Tea | ₹109.00 |
+| 10 | Blue Lagoon | ₹89.00 |
+| 11 | Mojito | ₹99.00 |
+| 12 | Kiss on the Beach | ₹109.00 |
+
+</td>
+</tr>
+</table>
+
+> 🚪 Enter **`0`** at any time during selection to finish the order and generate the bill.
+
+---
+
+## 🚀 Quick Start
+
+Get the cafe open in under a minute.
+
+### ✅ Prerequisites
+
+- A C++ compiler — **GCC**, **Clang**, or **MSVC**
+- A terminal or command-line environment
+
+### 🐧 Linux / 🍎 macOS
 
 ```bash
+# 1. Compile
 g++ main.cpp -o cafe_billing_system
-```
 
-### Run on Linux/macOS
-
-```bash
+# 2. Run
 ./cafe_billing_system
 ```
 
-### Run on Windows
+### 🪟 Windows
 
-```bash
+```cmd
+:: 1. Compile
+g++ main.cpp -o cafe_billing_system.exe
+
+:: 2. Run
 cafe_billing_system.exe
 ```
 
-## Example Workflow
+> 💡 **Tip:** Add `-std=c++17 -Wall` to the compile command for a modern standard and helpful warnings.
+
+---
+
+## ⚙️ How It Works
+
+| Step | Stage | What happens |
+|:--:|:--|:--|
+| 1️⃣ | **Welcome** | The program greets the customer and displays the full menu |
+| 2️⃣ | **Select** | The cashier enters an item number from the menu |
+| 3️⃣ | **Quantity** | The quantity for that item is entered |
+| 4️⃣ | **Repeat** | The order is saved and the prompt repeats until `0` is entered |
+| 5️⃣ | **Bill** | An itemised bill with the grand total is generated |
+| 6️⃣ | **Payment** | The program asks for the cash amount |
+| 7️⃣ | **Shortfall Check** | If the cash is less than the total, it asks for the remaining amount |
+| 8️⃣ | **Change** | If payment is sufficient, the return amount is calculated and shown |
+| 9️⃣ | **Goodbye** | A friendly thank-you message closes the session |
+
+```text
+            ┌──────────────┐
+            │  Show Menu   │
+            └──────┬───────┘
+                   ▼
+            ┌──────────────┐   choice ≠ 0
+     ┌────▶ │ Select Item  │ ─────────────┐
+     │      └──────┬───────┘              ▼
+     │             │ choice = 0    ┌──────────────┐
+     │             ▼               │Enter Quantity│
+     │      ┌──────────────┐       └──────┬───────┘
+     │      │ Generate Bill│              │
+     │      └──────┬───────┘              │
+     │             ▼                      │
+     │      ┌──────────────┐              │
+     │      │  Enter Cash  │ ◀─┐          │
+     │      └──────┬───────┘   │ short    │
+     │             ▼           │          │
+     │      ┌──────────────┐   │          │
+     │      │ Enough cash? │ ──┘          │
+     │      └──────┬───────┘              │
+     │             │ yes                  │
+     │             ▼                      │
+     │      ┌──────────────┐              │
+     │      │Return Change │              │
+     │      │ & Thank You  │              │
+     │      └──────────────┘              │
+     └────────────────────────────────────┘
+```
+
+---
+
+## 🎬 Example Session
+
+<details open>
+<summary><b>▶️ Sample order: 2 × Chocolate Shake + 1 × Iced Tea</b></summary>
+
+<br>
 
 ```text
 ##### Welcome to Asterisc Cafe! #####
@@ -105,27 +191,84 @@ Enter your Choice : 0
 ::::: Your Bill :::::
 ...
 Enter Your Cash: 500
-Return Amount: 123.00/-
+Return Amount: 173.00/-
 ##### Thank You! #######
 Please Visit Us Again
 ```
 
-## Requirements
+**Bill breakdown:**
 
-- C++ compiler (GCC, Clang, or MSVC)
-- Basic terminal/command-line environment
+| Item | Qty | Rate | Amount |
+|:--|:--:|--:|--:|
+| Chocolate Shake | 2 | ₹119.00 | ₹238.00 |
+| Iced Tea | 1 | ₹89.00 | ₹89.00 |
+| **Grand Total** | | | **₹327.00** |
+| Cash Received | | | ₹500.00 |
+| **Change Returned** | | | **₹173.00** |
 
-## Notes
+</details>
 
-This application is a beginner-friendly billing system intended for learning C++ concepts such as:
+---
 
-- arrays and vectors,
-- loops,
-- object-oriented design,
-- user input handling,
-- arithmetic calculations,
-- formatted console output.
+## 📁 Project Structure
 
-## License
+```text
+Cafe-Billing-System-main/
+├── main.cpp                # Application source code
+├── README.md               # Project documentation
+└── cafe_billing_system     # Compiled executable (generated after build)
+```
 
-This project is provided as a learning/demo project and can be freely used or modified for educational purposes.
+---
+
+## 🎓 What You'll Learn
+
+This beginner-friendly project is a great way to practise core C++ concepts:
+
+- 📦 **Arrays and vectors** — storing menu items and orders
+- 🔁 **Loops** — repeating prompts until the order is complete
+- 🧱 **Object-oriented design** — organising code into clear components
+- ⌨️ **User input handling** — reading choices, quantities, and cash
+- ➗ **Arithmetic calculations** — subtotals, totals, and change
+- 🖨️ **Formatted console output** — printing a neat, aligned bill
+
+---
+
+## 🗺️ Roadmap
+
+Ideas to take the cafe to the next level:
+
+- [ ] 🧾 Add GST / tax calculation to the bill
+- [ ] 💳 Support UPI and card payment modes
+- [ ] 💾 Save bills to a file for record-keeping
+- [ ] ✏️ Allow removing or editing items before billing
+- [ ] 📂 Load the menu from a file so prices are easy to update
+- [ ] 📊 Generate a daily sales summary
+
+---
+
+## 🤝 Contributing
+
+Have an idea for a new feature or a tastier menu? Contributions are welcome! 🎉
+
+1. **Fork** the repository
+2. **Create** a feature branch: `git checkout -b feature/your-feature`
+3. **Commit** your changes: `git commit -m "Add your feature"`
+4. **Push** the branch: `git push origin feature/your-feature`
+5. **Open** a Pull Request
+
+---
+
+## 📄 License
+
+This project is provided as a **learning and demo project** and may be freely used or modified for educational purposes.
+
+<div align="center">
+
+---
+
+☕ **Thanks for stopping by Asterisc Cafe — please visit us again!** ☕
+
+⭐ *If you enjoyed this project, consider giving it a star!* ⭐
+
+</div>
